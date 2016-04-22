@@ -85,7 +85,12 @@ namespace ScreenCaptureModule
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Process.Start(@"" + richTextBox1.Text);
+            //Process.Start(@"" + richTextBox1.Text);
+            var url = @"bswdprotocol:" + richTextBox1.Text;
+            var psi = new ProcessStartInfo();
+            psi.UseShellExecute = true;
+            psi.FileName = url; 
+            Process.Start(psi);
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
